@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tug’ilgan kun muborak!</title>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFF6E5;--ink:#1B1030;--pink:#FF3D81;--blue:#2B59FF;--yellow:#FFD60A;--mint:#3DDBB0;--card:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1B1030;--ink:#FFF6E5;--card:#2A1A48}}
+:root[data-theme="dark"]{--bg:#1B1030;--ink:#FFF6E5;--card:#2A1A48}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;font-weight:500;overflow-x:hidden;min-height:100vh}
+body.party{animation:hue 2s linear infinite}
+@keyframes hue{to{filter:hue-rotate(360deg)}}
+canvas#c{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+main{max-width:760px;margin:0 auto;padding:24px 18px 80px;text-align:center}
+h1{font-family:'Bagel Fat One',Impact,sans-serif;font-weight:400;font-size:clamp(46px,15vw,120px);line-height:.95;margin:.3em 0 .1em;letter-spacing:-.01em}
+h1 span{display:inline-block;animation:bob 1.2s ease-in-out infinite;cursor:pointer}
+h1 span:nth-child(3n){color:var(--pink)}h1 span:nth-child(3n+1){color:var(--blue)}h1 span:nth-child(3n+2){color:var(--yellow);-webkit-text-stroke:2px var(--ink)}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-14px) rotate(5deg)}}
+.name{font-family:'Bagel Fat One',Impact,sans-serif;font-size:clamp(34px,10vw,72px);color:var(--pink);min-height:1.2em;margin:0 0 .3em;word-break:break-word}
+.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+input{font:inherit;padding:12px 16px;border-radius:999px;border:3px solid var(--ink);background:var(--card);color:var(--ink);width:min(260px,100%);text-align:center}
+button{font:inherit;font-weight:700;padding:12px 20px;border-radius:999px;border:3px solid var(--ink);background:var(--yellow);color:#1B1030;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .1s,box-shadow .1s}
+button:hover{transform:translate(-1px,-1px)}button:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+button.p{background:var(--pink);color:#fff}button.b{background:var(--blue);color:#fff}button.m{background:var(--mint)}
+:focus-visible{outline:4px solid var(--blue);outline-offset:3px}
+section{margin-top:44px}
+h2{font-family:'Bagel Fat One',Impact,sans-serif;font-weight:400;font-size:clamp(28px,7vw,44px);margin:0 0 6px}
+.hint{opacity:.75;margin:0 0 14px}
+#cake{font-size:clamp(90px,28vw,170px);cursor:pointer;line-height:1;user-select:none;display:inline-block;position:relative}
+#cake.out .fl{display:none}
+.candles{display:grid;grid-template-columns:repeat(7,minmax(0,42px));grid-auto-rows:42px;justify-content:center;gap:4px;font-size:30px;line-height:42px;margin:0 auto 12px}
+.candles i{text-align:center;font-style:normal;cursor:pointer;display:inline-block;animation:fl .4s ease-in-out infinite alternate}
+.candles i.off{animation:none;filter:grayscale(1);opacity:.4}
+@keyframes fl{to{transform:scale(1.15) rotate(6deg)}}
+#sky{position:relative;height:340px;border:3px solid var(--ink);border-radius:28px;background:linear-gradient(var(--blue),var(--mint));overflow:hidden;touch-action:manipulation}
+.bal{position:absolute;bottom:-90px;width:64px;height:78px;border-radius:50% 50% 48% 48%;border:3px solid var(--ink);cursor:pointer;animation:up linear forwards}
+.bal:after{content:"";position:absolute;left:50%;top:100%;width:2px;height:30px;background:var(--ink)}
+@keyframes up{to{transform:translateY(-480px)}}
+#wish{min-height:96px;margin-top:16px;background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:16px;font-size:20px;box-shadow:6px 6px 0 var(--pink);display:flex;align-items:center;justify-content:center}
+#run{position:relative}
+.foot{margin-top:56px;opacity:.7}
+@media (prefers-reduced-motion:reduce){h1 span,.candles i{animation:none}body.party{animation:none}.bal{animation-duration:12s!important}}
+#intro{position:fixed;inset:0;z-index:60;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;text-align:center}
+#intro.hide{display:none}
+#intro h2{font-size:clamp(32px,9vw,60px)}
+.msg{margin-top:36px;background:var(--card);border:3px solid var(--ink);border-radius:26px;padding:22px 20px;font-size:clamp(19px,4.6vw,26px);line-height:1.45;box-shadow:6px 6px 0 var(--blue)}
+.msg b{display:block;font-size:40px;margin-bottom:6px}
+#cake{display:block;width:min(92vw,380px);margin:0 auto;font-size:0}
+#cake svg{width:100%;height:auto;display:block;overflow:visible}
+.o{stroke:var(--ink);stroke-width:4;stroke-linejoin:round}
+.fl{cursor:pointer;outline:none}
+.fl path{transform-box:fill-box;transform-origin:50% 100%;animation:fk .35s ease-in-out infinite alternate}
+@keyframes fk{to{transform:scale(1.15,1.2) rotate(5deg)}}
+.fl .sm{opacity:0;transition:opacity .3s}
+.fl.off path{display:none}.fl.off .sm{opacity:.7}
+.fl:focus-visible circle.hit{stroke:var(--blue);stroke-width:3}
+@media (prefers-reduced-motion:reduce){.fl path{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="c" aria-hidden="true"></canvas>
+<main>
+  <h1 id="title" aria-label="Tug’ilgan kun muborak">TUG’ILGAN KUN MUBORAK</h1>
+  <p class="name" id="who">Zilolakhon!</p>
+  <div class="row">
+    <button id="boom">Konfetti portlashi</button>
+    <button class="b" id="party">Bayram rejimi</button>
+  </div>
+
+  <p class="msg"><b>💌</b>Qaniydi, hozir yoningda bo’lsam. Lekin kelgusidagi barcha tug’ilgan kunlaringda yoningda bo’lishga umid qilaman.</p>
+
+  <section>
+    <h2>Shamlarni o’chir</h2>
+    <p class="hint">Har bir alangani bos. Avval tilak tila.</p>
+    <div id="cake"><svg viewBox="0 0 320 300" role="group" aria-label="Tug’ilgan kun torti, 29 raqamli shamlar bilan">
+<ellipse class="o" cx="160" cy="278" rx="150" ry="14" style="fill:var(--card)"/>
+<rect class="o" x="40" y="205" width="240" height="70" rx="16" fill="#FF3D81"/>
+<g fill="#FFD60A"><rect x="62" y="255" width="14" height="5" rx="2" transform="rotate(20 69 257)"/><rect x="120" y="262" width="14" height="5" rx="2" transform="rotate(-25 127 264)"/><rect x="185" y="256" width="14" height="5" rx="2" transform="rotate(15 192 258)"/><rect x="240" y="262" width="14" height="5" rx="2" transform="rotate(-15 247 264)"/></g>
+<rect class="o" x="40" y="205" width="240" height="30" rx="14" fill="#fff"/>
+<g fill="#fff"><circle cx="75" cy="238" r="10"/><circle cx="135" cy="242" r="12"/><circle cx="195" cy="238" r="10"/><circle cx="250" cy="241" r="11"/></g>
+<text class="o" x="100" y="216" text-anchor="middle" font-size="150" font-family="'Bagel Fat One',Impact,sans-serif" fill="#2B59FF" style="paint-order:stroke;stroke-width:8">2</text>
+<text class="o" x="220" y="216" text-anchor="middle" font-size="150" font-family="'Bagel Fat One',Impact,sans-serif" fill="#3DDBB0" style="paint-order:stroke;stroke-width:8">9</text>
+<g class="fl" transform="translate(82,98)" tabindex="0" role="button"><circle class="hit" r="24" cy="-8" fill="transparent"/><path class="o" style="stroke-width:2.5" d="M0 -24C11 -9 11 3 0 7C-11 3 -11 -9 0 -24Z" fill="#FFD60A"/><path d="M0 -10C5 -3 5 2 0 5C-5 2 -5 -3 0 -10Z" fill="#FF8A00"/><circle class="sm" r="7" cy="-8" fill="#9aa"/></g>
+<g class="fl" transform="translate(118,98)" tabindex="0" role="button"><circle class="hit" r="24" cy="-8" fill="transparent"/><path class="o" style="stroke-width:2.5" d="M0 -24C11 -9 11 3 0 7C-11 3 -11 -9 0 -24Z" fill="#FFD60A"/><path d="M0 -10C5 -3 5 2 0 5C-5 2 -5 -3 0 -10Z" fill="#FF8A00"/><circle class="sm" r="7" cy="-8" fill="#9aa"/></g>
+<g class="fl" transform="translate(202,98)" tabindex="0" role="button"><circle class="hit" r="24" cy="-8" fill="transparent"/><path class="o" style="stroke-width:2.5" d="M0 -24C11 -9 11 3 0 7C-11 3 -11 -9 0 -24Z" fill="#FFD60A"/><path d="M0 -10C5 -3 5 2 0 5C-5 2 -5 -3 0 -10Z" fill="#FF8A00"/><circle class="sm" r="7" cy="-8" fill="#9aa"/></g>
+<g class="fl" transform="translate(238,98)" tabindex="0" role="button"><circle class="hit" r="24" cy="-8" fill="transparent"/><path class="o" style="stroke-width:2.5" d="M0 -24C11 -9 11 3 0 7C-11 3 -11 -9 0 -24Z" fill="#FFD60A"/><path d="M0 -10C5 -3 5 2 0 5C-5 2 -5 -3 0 -10Z" fill="#FF8A00"/><circle class="sm" r="7" cy="-8" fill="#9aa"/></g>
+</svg></div>
+    
+  </section>
+
+  <section>
+    <h2>Sharlarni yorib ko’r</h2>
+    <p class="hint">Har bir sharda bitta tilak yashiringan.</p>
+    <div id="sky"></div>
+    <div id="wish" aria-live="polite">Tilagingni o’qish uchun sharni yor.</div>
+  </section>
+
+  <section>
+    <h2>Yana bir narsa</h2>
+    <p class="hint">Juda jiddiy tugma.</p>
+    <div class="row" style="height:70px"><button class="p" id="run">Bosma!</button></div>
+  </section>
+
+  <p class="foot">Juda ko’p konfetti bilan tayyorlandi. 🎉</p>
+</main>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var cv=$('c'),cx=cv.getContext('2d'),W,H,parts=[];
+function size(){W=cv.width=innerWidth;H=cv.height=innerHeight}size();addEventListener('resize',size);
+var cols=['#FF3D81','#2B59FF','#FFD60A','#3DDBB0','#FF8A00','#9B5DE5'];
+function burst(x,y,n){n=n||120;for(var i=0;i<n;i++){var a=Math.random()*Math.PI*2,s=4+Math.random()*10;
+parts.push({x:x,y:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-6,r:Math.random()*6+3,c:cols[i%cols.length],rot:Math.random()*6,vr:Math.random()*.4-.2,l:140+Math.random()*60})}
+if(!run)loop()}
+var run=false;
+function loop(){run=true;cx.clearRect(0,0,W,H);
+parts=parts.filter(function(p){return p.l>0&&p.y<H+20});
+parts.forEach(function(p){p.vy+=.28;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.l--;
+cx.save();cx.translate(p.x,p.y);cx.rotate(p.rot);cx.fillStyle=p.c;cx.fillRect(-p.r,-p.r/2,p.r*2,p.r);cx.restore()});
+if(parts.length)requestAnimationFrame(loop);else{run=false;cx.clearRect(0,0,W,H)}}
+function rain(){var t=0,iv=setInterval(function(){burst(Math.random()*W,-10,0);for(var i=0;i<14;i++)parts.push({x:Math.random()*W,y:-10,vx:Math.random()*4-2,vy:Math.random()*3,r:Math.random()*5+3,c:cols[i%6],rot:0,vr:.1,l:260});if(!run)loop();if(++t>20)clearInterval(iv)},120)}
+function center(){burst(W/2,H/3,160)}
+
+// letters
+var t=$('title');t.innerHTML='';
+var brk=false;'TUG’ILGAN KUN MUBORAK'.split('').forEach(function(ch,i){var s=document.createElement('span');if(ch===' '){t.appendChild(document.createElement('br'));return}else s.textContent=ch;s.style.animationDelay=(i*.08)+'s';s.setAttribute('aria-hidden','true');
+s.onclick=function(e){burst(e.clientX,e.clientY,40)};t.appendChild(s)});
+
+// name
+function setName(v){v=(v||'').trim();$('who').textContent=v?v+'!':'Sen ajoyibsan!';document.title=v?'Tug’ilgan kun muborak, '+v+'!':'Tug’ilgan kun muborak!'}
+var q=new URLSearchParams(location.search).get('name');if(q)setName(q);
+
+$('boom').onclick=center;
+$('party').onclick=function(){document.body.classList.toggle('party');rain()};
+
+// candles
+var left=4,fls=document.querySelectorAll('.fl');
+for(var i=0;i<fls.length;i++){var c=fls[i];c.setAttribute('aria-label','Shamni o’chirish '+(i+1));
+(function(c){function off(){if(c.classList.contains('off'))return;c.classList.add('off');if(--left===0){$('cake').classList.add('out');rain();$('wish').textContent='Hamma shamlar o’chdi. Tilaging endi amalga oshadi.'}}
+c.onclick=off;c.onkeydown=function(e){if(e.key==='Enter'||e.key===' ')off()}})(c)}
+$('cake').onclick=function(e){burst(e.clientX,e.clientY,50)};
+
+// balloons
+var wishes=['Qahvang quyuq, dushanbalaring esa qisqa bo’lsin.','Bugun koinot senga tort qarz. Olishni unutma.','Quyosh atrofida yana bir aylanish, hali ham yengilmassan.','Pochta qutang bo’sh, gazak javoning esa to’la bo’lsin.','Sen bosh qahramonsan, qolganlar esa shunchaki mehmonlar.','Bu yil bildirishnomalardan ko’ra kulgi ko’proq bo’lsin.','Bu yil yo’lingdagi hamma svetoforlar yashil yonsin.','Avval tortni ye. Tashvishni keyin qilarsan.','Sen qarimaysan, yangi bosqichga ko’tarilasan.','Wi-Fi’ing tez, rejalaring esa qiziqarli bo’lsin.'];
+var sky=$('sky'),bi=0;
+function balloon(){var b=document.createElement('div');b.className='bal';b.style.left=(Math.random()*82+2)+'%';b.style.background=cols[bi++%cols.length];b.style.animationDuration=(7+Math.random()*5)+'s';
+b.onclick=function(e){var r=b.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,45);$('wish').textContent=wishes[Math.floor(Math.random()*wishes.length)];b.remove()};
+b.onanimationend=function(){b.remove()};sky.appendChild(b)}
+for(var k=0;k<5;k++)setTimeout(balloon,k*400);
+setInterval(function(){if(sky.children.length<9&&!document.hidden)balloon()},1100);
+
+// runaway button
+var rb=$('run'),dodges=0,msgs=['Yo’q, juda sekin!','Sal qoldi!','Sen uchun juda tez!','Xo’p, xo’p, oxirgi urinish...'];
+function dodge(){if(dodges>=4)return;rb.textContent=msgs[dodges];dodges++;
+var x=(Math.random()-.5)*Math.min(innerWidth-160,420),y=(Math.random()-.5)*120;rb.style.transform='translate('+x+'px,'+y+'px) rotate('+(Math.random()*20-10)+'deg)'}
+rb.addEventListener('mouseenter',dodge);rb.addEventListener('touchstart',function(e){if(dodges<4){e.preventDefault();dodge()}},{passive:false});
+rb.onclick=function(){if(dodges<4){dodge();return}rb.style.transform='none';rb.textContent='Bosding! Bayram boshlandi!';document.body.classList.add('party');rain();center()};
+
+if(!q)setName('Zilolakhon');
+setTimeout(center,500);
+})();
+</script>
+</body>
+</html>
