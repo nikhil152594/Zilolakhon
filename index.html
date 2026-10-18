@@ -5,17 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Tug’ilgan kun muborak!</title>
 <link href="https://fonts.cdnfonts.com/css/sadira-craft" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://db.onlinewebfonts.com/c/069cf58a3ad32731d8fdc3ed0ff128d0?family=Hugh+is+Life+Personal+Use+Italic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=DM+Sans:wght@500;700&family=Pinyon+Script&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F6EBD3;--ink:#12204A;--pink:#A4133C;--blue:#1F3A93;--yellow:#E0A82E;--mint:#2FA89A;--card:#FFFBF0;--gold:#C9972B;--teal:#0E8C9A;
+:root{--bg:#F7F1E1;--ink:#0B1530;--pink:#6B1A33;--blue:#14275C;--yellow:#C9A24B;--mint:#8E2A4A;--card:#FFFBF1;--gold:#B8903A;--teal:#14275C;--btn:#14275C;--btnt:#F7F1E1;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1B3D;--ink:#F6EBD3;--card:#1B2B5E;--pink:#F2688A;--blue:#6F8BFF}}
-:root[data-theme="dark"]{--bg:#0F1B3D;--ink:#F6EBD3;--card:#1B2B5E;--pink:#F2688A;--blue:#6F8BFF}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1530;--ink:#F7F1E1;--card:#14224A;--pink:#E0A3B4;--blue:#9DB3F0;--btn:#C9A24B;--btnt:#0B1530}}
+:root[data-theme="dark"]{--bg:#0B1530;--ink:#F7F1E1;--card:#14224A;--pink:#E0A3B4;--blue:#9DB3F0;--btn:#C9A24B;--btnt:#0B1530}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2764%27%20height%3D%2764%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23C9972B%27%20stroke-opacity%3D%27.3%27%20stroke-width%3D%271.5%27%3E%3Crect%20x%3D%2714%27%20y%3D%2714%27%20width%3D%2736%27%20height%3D%2736%27/%3E%3Crect%20x%3D%2714%27%20y%3D%2714%27%20width%3D%2736%27%20height%3D%2736%27%20transform%3D%27rotate%2845%2032%2032%29%27/%3E%3Ccircle%20cx%3D%2732%27%20cy%3D%2732%27%20r%3D%276%27/%3E%3C/g%3E%3C/svg%3E");color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;font-weight:500;overflow-x:hidden;min-height:100vh}
-body.party{animation:hue 2s linear infinite}
-@keyframes hue{to{filter:hue-rotate(360deg)}}
 canvas#c{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
 main{max-width:760px;margin:0 auto;padding:24px 18px 80px;text-align:center}
 h1{font-family:'Sadira Craft','Amiri',Georgia,serif;font-weight:400;font-size:clamp(46px,15vw,120px);line-height:.95;margin:.3em 0 .1em;letter-spacing:-.01em}
@@ -24,8 +23,8 @@ h1 span:nth-child(3n){color:var(--pink)}h1 span:nth-child(3n+1){color:var(--blue
 @keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-14px) rotate(5deg)}}
 .name{font-family:'Sadira Craft','Amiri',Georgia,serif;font-size:clamp(34px,10vw,72px);color:var(--pink);min-height:1.2em;margin:0 0 .3em;word-break:break-word}
 .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
-input{font:inherit;padding:12px 16px;border-radius:999px;border:3px solid var(--ink);background:var(--card);color:var(--ink);width:min(260px,100%);text-align:center}
-button{font:inherit;font-weight:700;padding:12px 20px;border-radius:14px;border:3px solid var(--ink);background:var(--yellow);color:#1B1030;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .1s,box-shadow .1s}
+input{font:inherit;padding:12px 16px;border-radius:999px;border:2px solid var(--gold);background:var(--card);color:var(--ink);width:min(260px,100%);text-align:center}
+button{font:inherit;font-weight:700;padding:12px 20px;border-radius:14px;border:2px solid var(--gold);background:var(--yellow);color:#1B1030;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .1s,box-shadow .1s}
 button:hover{transform:translate(-1px,-1px)}button:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
 button.p{background:var(--pink);color:#fff}button.b{background:var(--blue);color:#fff}button.m{background:var(--mint)}
 :focus-visible{outline:4px solid var(--blue);outline-offset:3px}
@@ -38,18 +37,18 @@ h2{font-family:'Sadira Craft','Amiri',Georgia,serif;font-weight:400;font-size:cl
 .candles i{text-align:center;font-style:normal;cursor:pointer;display:inline-block;animation:fl .4s ease-in-out infinite alternate}
 .candles i.off{animation:none;filter:grayscale(1);opacity:.4}
 @keyframes fl{to{transform:scale(1.15) rotate(6deg)}}
-#sky{position:relative;height:340px;border:3px solid var(--ink);border-radius:28px;background:linear-gradient(#1F3A93,#0E8C9A);overflow:hidden;touch-action:manipulation}
-.bal{position:absolute;bottom:-90px;width:64px;height:78px;border-radius:50% 50% 48% 48%;border:3px solid var(--ink);cursor:pointer;animation:up linear forwards}
+#sky{position:relative;height:340px;border:2px solid var(--gold);border-radius:28px;background:linear-gradient(#0B1530,#22386F);overflow:hidden;touch-action:manipulation}
+.bal{position:absolute;bottom:-90px;width:64px;height:78px;border-radius:50% 50% 48% 48%;border:2px solid var(--gold);cursor:pointer;animation:up linear forwards}
 .bal:after{content:"";position:absolute;left:50%;top:100%;width:2px;height:30px;background:var(--ink)}
 @keyframes up{to{transform:translateY(-480px)}}
-#wish{min-height:96px;margin-top:16px;background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:16px;font-size:20px;box-shadow:6px 6px 0 var(--pink);display:flex;align-items:center;justify-content:center}
+#wish{min-height:96px;margin-top:16px;background:var(--card);border:2px solid var(--gold);border-radius:22px;padding:16px;font-size:20px;box-shadow:0 8px 24px rgba(11,21,48,.16);display:flex;align-items:center;justify-content:center}
 #run{position:relative}
 .foot{margin-top:56px;opacity:.7}
 @media (prefers-reduced-motion:reduce){h1 span,.candles i{animation:none}body.party{animation:none}.bal{animation-duration:12s!important}}
 #intro{position:fixed;inset:0;z-index:60;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;text-align:center}
 #intro.hide{display:none}
 #intro h2{font-size:clamp(32px,9vw,60px)}
-.msg{margin-top:36px;background:var(--card);border:3px solid var(--ink);border-radius:26px;padding:22px 20px;font-size:clamp(19px,4.6vw,26px);line-height:1.45;box-shadow:6px 6px 0 var(--blue)}
+.msg{margin-top:36px;background:var(--card);border:2px solid var(--gold);border-radius:26px;padding:22px 20px;font-size:clamp(19px,4.6vw,26px);line-height:1.45;box-shadow:0 8px 24px rgba(11,21,48,.16)}
 .msg b{display:block;font-size:40px;margin-bottom:6px}
 #cake{display:block;width:min(92vw,380px);margin:0 auto;font-size:0}
 #cake svg{width:100%;height:auto;display:block;overflow:visible}
@@ -61,14 +60,20 @@ h2{font-family:'Sadira Craft','Amiri',Georgia,serif;font-weight:400;font-size:cl
 .fl.off path{display:none}.fl.off .sm{opacity:.7}
 .fl:focus-visible circle.hit{stroke:var(--blue);stroke-width:3}
 @media (prefers-reduced-motion:reduce){.fl path{animation:none}}
-.band{height:26px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2748%27%20height%3D%2726%27%3E%3Crect%20width%3D%2748%27%20height%3D%2726%27%20fill%3D%27%2312204A%27/%3E%3Cellipse%20cx%3D%2724%27%20cy%3D%276.9%27%20rx%3D%272.4%27%20ry%3D%274.4%27%20transform%3D%27rotate%280%2024%2013%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%2724%27%20cy%3D%276.9%27%20rx%3D%272.4%27%20ry%3D%274.4%27%20transform%3D%27rotate%2845%2024%2013%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%2724%27%20cy%3D%276.9%27%20rx%3D%272.4%27%20ry%3D%274.4%27%20transform%3D%27rotate%2890%2024%2013%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%2724%27%20cy%3D%276.9%27%20rx%3D%272.4%27%20ry%3D%274.4%27%20transform%3D%27rotate%28135%2024%2013%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%2724%27%20cy%3D%276.9%27%20rx%3D%272.4%27%20ry%3D%274.4%27%20transform%3D%27rotate%28180%2024%2013%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%2724%27%20cy%3D%276.9%27%20rx%3D%272.4%27%20ry%3D%274.4%27%20transform%3D%27rotate%28225%2024%2013%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%2724%27%20cy%3D%276.9%27%20rx%3D%272.4%27%20ry%3D%274.4%27%20transform%3D%27rotate%28270%2024%2013%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%2724%27%20cy%3D%276.9%27%20rx%3D%272.4%27%20ry%3D%274.4%27%20transform%3D%27rotate%28315%2024%2013%29%27%20fill%3D%27%23A4133C%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%272.9%27%20r%3D%271.0%27%20transform%3D%27rotate%2822%2024%2013%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%272.9%27%20r%3D%271.0%27%20transform%3D%27rotate%2867%2024%2013%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%272.9%27%20r%3D%271.0%27%20transform%3D%27rotate%28112%2024%2013%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%272.9%27%20r%3D%271.0%27%20transform%3D%27rotate%28157%2024%2013%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%272.9%27%20r%3D%271.0%27%20transform%3D%27rotate%28202%2024%2013%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%272.9%27%20r%3D%271.0%27%20transform%3D%27rotate%28247%2024%2013%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%272.9%27%20r%3D%271.0%27%20transform%3D%27rotate%28292%2024%2013%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%272.9%27%20r%3D%271.0%27%20transform%3D%27rotate%28337%2024%2013%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%2713%27%20r%3D%273.3%27%20fill%3D%27%23E0A82E%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%2713%27%20r%3D%271.4%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%275%27%20cy%3D%2713%27%20rx%3D%275%27%20ry%3D%272.5%27%20fill%3D%27%230E8C9A%27/%3E%3Cellipse%20cx%3D%2743%27%20cy%3D%2713%27%20rx%3D%275%27%20ry%3D%272.5%27%20fill%3D%27%230E8C9A%27/%3E%3C/svg%3E") repeat-x;background-size:48px 26px}
+.band{height:26px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2748%27%20height%3D%2726%27%3E%3Crect%20width%3D%2748%27%20height%3D%2726%27%20fill%3D%27%230B1530%27/%3E%3Cellipse%20cx%3D%2724%27%20cy%3D%276.9%27%20rx%3D%272.4%27%20ry%3D%274.4%27%20transform%3D%27rotate%280%2024%2013%29%27%20fill%3D%27%23C9A24B%27/%3E%3Cellipse%20cx%3D%2724%27%20cy%3D%276.9%27%20rx%3D%272.4%27%20ry%3D%274.4%27%20transform%3D%27rotate%2845%2024%2013%29%27%20fill%3D%27%23C9A24B%27/%3E%3Cellipse%20cx%3D%2724%27%20cy%3D%276.9%27%20rx%3D%272.4%27%20ry%3D%274.4%27%20transform%3D%27rotate%2890%2024%2013%29%27%20fill%3D%27%23C9A24B%27/%3E%3Cellipse%20cx%3D%2724%27%20cy%3D%276.9%27%20rx%3D%272.4%27%20ry%3D%274.4%27%20transform%3D%27rotate%28135%2024%2013%29%27%20fill%3D%27%23C9A24B%27/%3E%3Cellipse%20cx%3D%2724%27%20cy%3D%276.9%27%20rx%3D%272.4%27%20ry%3D%274.4%27%20transform%3D%27rotate%28180%2024%2013%29%27%20fill%3D%27%23C9A24B%27/%3E%3Cellipse%20cx%3D%2724%27%20cy%3D%276.9%27%20rx%3D%272.4%27%20ry%3D%274.4%27%20transform%3D%27rotate%28225%2024%2013%29%27%20fill%3D%27%23C9A24B%27/%3E%3Cellipse%20cx%3D%2724%27%20cy%3D%276.9%27%20rx%3D%272.4%27%20ry%3D%274.4%27%20transform%3D%27rotate%28270%2024%2013%29%27%20fill%3D%27%23C9A24B%27/%3E%3Cellipse%20cx%3D%2724%27%20cy%3D%276.9%27%20rx%3D%272.4%27%20ry%3D%274.4%27%20transform%3D%27rotate%28315%2024%2013%29%27%20fill%3D%27%23C9A24B%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%272.9%27%20r%3D%271.0%27%20transform%3D%27rotate%2822%2024%2013%29%27%20fill%3D%27%23F7F1E1%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%272.9%27%20r%3D%271.0%27%20transform%3D%27rotate%2867%2024%2013%29%27%20fill%3D%27%23F7F1E1%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%272.9%27%20r%3D%271.0%27%20transform%3D%27rotate%28112%2024%2013%29%27%20fill%3D%27%23F7F1E1%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%272.9%27%20r%3D%271.0%27%20transform%3D%27rotate%28157%2024%2013%29%27%20fill%3D%27%23F7F1E1%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%272.9%27%20r%3D%271.0%27%20transform%3D%27rotate%28202%2024%2013%29%27%20fill%3D%27%23F7F1E1%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%272.9%27%20r%3D%271.0%27%20transform%3D%27rotate%28247%2024%2013%29%27%20fill%3D%27%23F7F1E1%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%272.9%27%20r%3D%271.0%27%20transform%3D%27rotate%28292%2024%2013%29%27%20fill%3D%27%23F7F1E1%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%272.9%27%20r%3D%271.0%27%20transform%3D%27rotate%28337%2024%2013%29%27%20fill%3D%27%23F7F1E1%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%2713%27%20r%3D%273.3%27%20fill%3D%27%236B1A33%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%2713%27%20r%3D%271.4%27%20fill%3D%27%23C9A24B%27/%3E%3Cellipse%20cx%3D%275%27%20cy%3D%2713%27%20rx%3D%275%27%20ry%3D%272.5%27%20fill%3D%27%23C9A24B%27/%3E%3Cellipse%20cx%3D%2743%27%20cy%3D%2713%27%20rx%3D%275%27%20ry%3D%272.5%27%20fill%3D%27%23C9A24B%27/%3E%3C/svg%3E") repeat-x;background-size:48px 26px}
 .arch{margin:18px auto 10px;padding:34px 14px 24px;border:4px double var(--gold);border-radius:999px 999px 24px 24px;background:linear-gradient(var(--card),transparent 75%);outline:3px solid var(--teal);outline-offset:6px}
 .arch h1{margin-top:.15em}
 h2:before{content:"\2756 "}h2:after{content:" \2756"}h2:before,h2:after{color:var(--gold);font-size:.6em;vertical-align:middle}
 .msg,#wish,#sky{outline:2px solid var(--gold);outline-offset:-10px}
-.arch:before{content:"";display:block;width:56px;height:56px;margin:-6px auto 6px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2060%2060%27%3E%3Cellipse%20cx%3D%2730%27%20cy%3D%2714.6%27%20rx%3D%276.2%27%20ry%3D%2711.2%27%20transform%3D%27rotate%280%2030%2030%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%2730%27%20cy%3D%2714.6%27%20rx%3D%276.2%27%20ry%3D%2711.2%27%20transform%3D%27rotate%2845%2030%2030%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%2730%27%20cy%3D%2714.6%27%20rx%3D%276.2%27%20ry%3D%2711.2%27%20transform%3D%27rotate%2890%2030%2030%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%2730%27%20cy%3D%2714.6%27%20rx%3D%276.2%27%20ry%3D%2711.2%27%20transform%3D%27rotate%28135%2030%2030%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%2730%27%20cy%3D%2714.6%27%20rx%3D%276.2%27%20ry%3D%2711.2%27%20transform%3D%27rotate%28180%2030%2030%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%2730%27%20cy%3D%2714.6%27%20rx%3D%276.2%27%20ry%3D%2711.2%27%20transform%3D%27rotate%28225%2030%2030%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%2730%27%20cy%3D%2714.6%27%20rx%3D%276.2%27%20ry%3D%2711.2%27%20transform%3D%27rotate%28270%2030%2030%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%2730%27%20cy%3D%2714.6%27%20rx%3D%276.2%27%20ry%3D%2711.2%27%20transform%3D%27rotate%28315%2030%2030%29%27%20fill%3D%27%23A4133C%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%274.2%27%20r%3D%272.5%27%20transform%3D%27rotate%2822%2030%2030%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%274.2%27%20r%3D%272.5%27%20transform%3D%27rotate%2867%2030%2030%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%274.2%27%20r%3D%272.5%27%20transform%3D%27rotate%28112%2030%2030%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%274.2%27%20r%3D%272.5%27%20transform%3D%27rotate%28157%2030%2030%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%274.2%27%20r%3D%272.5%27%20transform%3D%27rotate%28202%2030%2030%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%274.2%27%20r%3D%272.5%27%20transform%3D%27rotate%28247%2030%2030%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%274.2%27%20r%3D%272.5%27%20transform%3D%27rotate%28292%2030%2030%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%274.2%27%20r%3D%272.5%27%20transform%3D%27rotate%28337%2030%2030%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%2730%27%20r%3D%278.4%27%20fill%3D%27%23E0A82E%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%2730%27%20r%3D%273.6%27%20fill%3D%27%23A4133C%27/%3E%3C/svg%3E") center/contain no-repeat}
-section::before{content:"";display:block;height:36px;margin:0 auto 12px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20260%2036%27%3E%3Cpath%20d%3D%27M18%2018H100M160%2018H242%27%20stroke%3D%27%23C9972B%27%20stroke-width%3D%272%27/%3E%3Ccircle%20cx%3D%2710%27%20cy%3D%2718%27%20r%3D%273.5%27%20fill%3D%27%23A4133C%27/%3E%3Ccircle%20cx%3D%27250%27%20cy%3D%2718%27%20r%3D%273.5%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%27108%27%20cy%3D%2712%27%20rx%3D%279%27%20ry%3D%273.5%27%20transform%3D%27rotate%28-25%20108%2012%29%27%20fill%3D%27%230E8C9A%27/%3E%3Cellipse%20cx%3D%27108%27%20cy%3D%2724%27%20rx%3D%279%27%20ry%3D%273.5%27%20transform%3D%27rotate%2825%20108%2024%29%27%20fill%3D%27%230E8C9A%27/%3E%3Cellipse%20cx%3D%27152%27%20cy%3D%2712%27%20rx%3D%279%27%20ry%3D%273.5%27%20transform%3D%27rotate%2825%20152%2012%29%27%20fill%3D%27%230E8C9A%27/%3E%3Cellipse%20cx%3D%27152%27%20cy%3D%2724%27%20rx%3D%279%27%20ry%3D%273.5%27%20transform%3D%27rotate%28-25%20152%2024%29%27%20fill%3D%27%230E8C9A%27/%3E%3Cellipse%20cx%3D%27130%27%20cy%3D%279.2%27%20rx%3D%273.5%27%20ry%3D%276.4%27%20transform%3D%27rotate%280%20130%2018%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%27130%27%20cy%3D%279.2%27%20rx%3D%273.5%27%20ry%3D%276.4%27%20transform%3D%27rotate%2845%20130%2018%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%27130%27%20cy%3D%279.2%27%20rx%3D%273.5%27%20ry%3D%276.4%27%20transform%3D%27rotate%2890%20130%2018%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%27130%27%20cy%3D%279.2%27%20rx%3D%273.5%27%20ry%3D%276.4%27%20transform%3D%27rotate%28135%20130%2018%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%27130%27%20cy%3D%279.2%27%20rx%3D%273.5%27%20ry%3D%276.4%27%20transform%3D%27rotate%28180%20130%2018%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%27130%27%20cy%3D%279.2%27%20rx%3D%273.5%27%20ry%3D%276.4%27%20transform%3D%27rotate%28225%20130%2018%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%27130%27%20cy%3D%279.2%27%20rx%3D%273.5%27%20ry%3D%276.4%27%20transform%3D%27rotate%28270%20130%2018%29%27%20fill%3D%27%23A4133C%27/%3E%3Cellipse%20cx%3D%27130%27%20cy%3D%279.2%27%20rx%3D%273.5%27%20ry%3D%276.4%27%20transform%3D%27rotate%28315%20130%2018%29%27%20fill%3D%27%23A4133C%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%273.3%27%20r%3D%271.4%27%20transform%3D%27rotate%2822%20130%2018%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%273.3%27%20r%3D%271.4%27%20transform%3D%27rotate%2867%20130%2018%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%273.3%27%20r%3D%271.4%27%20transform%3D%27rotate%28112%20130%2018%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%273.3%27%20r%3D%271.4%27%20transform%3D%27rotate%28157%20130%2018%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%273.3%27%20r%3D%271.4%27%20transform%3D%27rotate%28202%20130%2018%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%273.3%27%20r%3D%271.4%27%20transform%3D%27rotate%28247%20130%2018%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%273.3%27%20r%3D%271.4%27%20transform%3D%27rotate%28292%20130%2018%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%273.3%27%20r%3D%271.4%27%20transform%3D%27rotate%28337%20130%2018%29%27%20fill%3D%27%230E8C9A%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%2718%27%20r%3D%274.8%27%20fill%3D%27%23E0A82E%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%2718%27%20r%3D%272.1%27%20fill%3D%27%23A4133C%27/%3E%3C/svg%3E") center/contain no-repeat}
-.arch h1{white-space:nowrap;font-size:clamp(32px,11vw,96px)}
+.arch:before{content:"";display:block;width:56px;height:56px;margin:-6px auto 6px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2060%2060%27%3E%3Cellipse%20cx%3D%2730%27%20cy%3D%2714.6%27%20rx%3D%276.2%27%20ry%3D%2711.2%27%20transform%3D%27rotate%280%2030%2030%29%27%20fill%3D%27%236B1A33%27/%3E%3Cellipse%20cx%3D%2730%27%20cy%3D%2714.6%27%20rx%3D%276.2%27%20ry%3D%2711.2%27%20transform%3D%27rotate%2845%2030%2030%29%27%20fill%3D%27%236B1A33%27/%3E%3Cellipse%20cx%3D%2730%27%20cy%3D%2714.6%27%20rx%3D%276.2%27%20ry%3D%2711.2%27%20transform%3D%27rotate%2890%2030%2030%29%27%20fill%3D%27%236B1A33%27/%3E%3Cellipse%20cx%3D%2730%27%20cy%3D%2714.6%27%20rx%3D%276.2%27%20ry%3D%2711.2%27%20transform%3D%27rotate%28135%2030%2030%29%27%20fill%3D%27%236B1A33%27/%3E%3Cellipse%20cx%3D%2730%27%20cy%3D%2714.6%27%20rx%3D%276.2%27%20ry%3D%2711.2%27%20transform%3D%27rotate%28180%2030%2030%29%27%20fill%3D%27%236B1A33%27/%3E%3Cellipse%20cx%3D%2730%27%20cy%3D%2714.6%27%20rx%3D%276.2%27%20ry%3D%2711.2%27%20transform%3D%27rotate%28225%2030%2030%29%27%20fill%3D%27%236B1A33%27/%3E%3Cellipse%20cx%3D%2730%27%20cy%3D%2714.6%27%20rx%3D%276.2%27%20ry%3D%2711.2%27%20transform%3D%27rotate%28270%2030%2030%29%27%20fill%3D%27%236B1A33%27/%3E%3Cellipse%20cx%3D%2730%27%20cy%3D%2714.6%27%20rx%3D%276.2%27%20ry%3D%2711.2%27%20transform%3D%27rotate%28315%2030%2030%29%27%20fill%3D%27%236B1A33%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%274.2%27%20r%3D%272.5%27%20transform%3D%27rotate%2822%2030%2030%29%27%20fill%3D%27%23B8903A%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%274.2%27%20r%3D%272.5%27%20transform%3D%27rotate%2867%2030%2030%29%27%20fill%3D%27%23B8903A%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%274.2%27%20r%3D%272.5%27%20transform%3D%27rotate%28112%2030%2030%29%27%20fill%3D%27%23B8903A%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%274.2%27%20r%3D%272.5%27%20transform%3D%27rotate%28157%2030%2030%29%27%20fill%3D%27%23B8903A%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%274.2%27%20r%3D%272.5%27%20transform%3D%27rotate%28202%2030%2030%29%27%20fill%3D%27%23B8903A%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%274.2%27%20r%3D%272.5%27%20transform%3D%27rotate%28247%2030%2030%29%27%20fill%3D%27%23B8903A%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%274.2%27%20r%3D%272.5%27%20transform%3D%27rotate%28292%2030%2030%29%27%20fill%3D%27%23B8903A%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%274.2%27%20r%3D%272.5%27%20transform%3D%27rotate%28337%2030%2030%29%27%20fill%3D%27%23B8903A%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%2730%27%20r%3D%278.4%27%20fill%3D%27%23C9A24B%27/%3E%3Ccircle%20cx%3D%2730%27%20cy%3D%2730%27%20r%3D%273.6%27%20fill%3D%27%236B1A33%27/%3E%3C/svg%3E") center/contain no-repeat}
+section::before{content:"";display:block;height:36px;margin:0 auto 12px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20260%2036%27%3E%3Cpath%20d%3D%27M18%2018H100M160%2018H242%27%20stroke%3D%27%23B8903A%27%20stroke-width%3D%271.5%27/%3E%3Ccircle%20cx%3D%2710%27%20cy%3D%2718%27%20r%3D%273%27%20fill%3D%27%23B8903A%27/%3E%3Ccircle%20cx%3D%27250%27%20cy%3D%2718%27%20r%3D%273%27%20fill%3D%27%23B8903A%27/%3E%3Cellipse%20cx%3D%27108%27%20cy%3D%2712%27%20rx%3D%279%27%20ry%3D%273.5%27%20transform%3D%27rotate%28-25%20108%2012%29%27%20fill%3D%27%2314275C%27/%3E%3Cellipse%20cx%3D%27108%27%20cy%3D%2724%27%20rx%3D%279%27%20ry%3D%273.5%27%20transform%3D%27rotate%2825%20108%2024%29%27%20fill%3D%27%2314275C%27/%3E%3Cellipse%20cx%3D%27152%27%20cy%3D%2712%27%20rx%3D%279%27%20ry%3D%273.5%27%20transform%3D%27rotate%2825%20152%2012%29%27%20fill%3D%27%2314275C%27/%3E%3Cellipse%20cx%3D%27152%27%20cy%3D%2724%27%20rx%3D%279%27%20ry%3D%273.5%27%20transform%3D%27rotate%28-25%20152%2024%29%27%20fill%3D%27%2314275C%27/%3E%3Cellipse%20cx%3D%27130%27%20cy%3D%279.2%27%20rx%3D%273.5%27%20ry%3D%276.4%27%20transform%3D%27rotate%280%20130%2018%29%27%20fill%3D%27%236B1A33%27/%3E%3Cellipse%20cx%3D%27130%27%20cy%3D%279.2%27%20rx%3D%273.5%27%20ry%3D%276.4%27%20transform%3D%27rotate%2845%20130%2018%29%27%20fill%3D%27%236B1A33%27/%3E%3Cellipse%20cx%3D%27130%27%20cy%3D%279.2%27%20rx%3D%273.5%27%20ry%3D%276.4%27%20transform%3D%27rotate%2890%20130%2018%29%27%20fill%3D%27%236B1A33%27/%3E%3Cellipse%20cx%3D%27130%27%20cy%3D%279.2%27%20rx%3D%273.5%27%20ry%3D%276.4%27%20transform%3D%27rotate%28135%20130%2018%29%27%20fill%3D%27%236B1A33%27/%3E%3Cellipse%20cx%3D%27130%27%20cy%3D%279.2%27%20rx%3D%273.5%27%20ry%3D%276.4%27%20transform%3D%27rotate%28180%20130%2018%29%27%20fill%3D%27%236B1A33%27/%3E%3Cellipse%20cx%3D%27130%27%20cy%3D%279.2%27%20rx%3D%273.5%27%20ry%3D%276.4%27%20transform%3D%27rotate%28225%20130%2018%29%27%20fill%3D%27%236B1A33%27/%3E%3Cellipse%20cx%3D%27130%27%20cy%3D%279.2%27%20rx%3D%273.5%27%20ry%3D%276.4%27%20transform%3D%27rotate%28270%20130%2018%29%27%20fill%3D%27%236B1A33%27/%3E%3Cellipse%20cx%3D%27130%27%20cy%3D%279.2%27%20rx%3D%273.5%27%20ry%3D%276.4%27%20transform%3D%27rotate%28315%20130%2018%29%27%20fill%3D%27%236B1A33%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%273.3%27%20r%3D%271.4%27%20transform%3D%27rotate%2822%20130%2018%29%27%20fill%3D%27%23B8903A%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%273.3%27%20r%3D%271.4%27%20transform%3D%27rotate%2867%20130%2018%29%27%20fill%3D%27%23B8903A%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%273.3%27%20r%3D%271.4%27%20transform%3D%27rotate%28112%20130%2018%29%27%20fill%3D%27%23B8903A%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%273.3%27%20r%3D%271.4%27%20transform%3D%27rotate%28157%20130%2018%29%27%20fill%3D%27%23B8903A%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%273.3%27%20r%3D%271.4%27%20transform%3D%27rotate%28202%20130%2018%29%27%20fill%3D%27%23B8903A%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%273.3%27%20r%3D%271.4%27%20transform%3D%27rotate%28247%20130%2018%29%27%20fill%3D%27%23B8903A%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%273.3%27%20r%3D%271.4%27%20transform%3D%27rotate%28292%20130%2018%29%27%20fill%3D%27%23B8903A%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%273.3%27%20r%3D%271.4%27%20transform%3D%27rotate%28337%20130%2018%29%27%20fill%3D%27%23B8903A%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%2718%27%20r%3D%274.8%27%20fill%3D%27%23C9A24B%27/%3E%3Ccircle%20cx%3D%27130%27%20cy%3D%2718%27%20r%3D%272.1%27%20fill%3D%27%236B1A33%27/%3E%3C/svg%3E") center/contain no-repeat}
+.arch h1{white-space:nowrap;font-size:clamp(46px,15vw,104px);line-height:1.08;font-weight:400;letter-spacing:0;margin:.1em 0 .05em;color:var(--pink);font-family:'Hugh is Life Personal Use Italic','Pinyon Script',cursive}
+.name{color:var(--blue);letter-spacing:.02em}
+button{background:var(--btn);color:var(--btnt);border-width:2px;border-radius:4px;box-shadow:0 3px 0 var(--gold);letter-spacing:.06em}
+.msg,#wish,#sky{border-radius:10px}
+.msg b{color:var(--gold)}
+.bal{border-color:#E9D8A6}.bal:after{background:#E9D8A6}
+.foot{color:var(--gold);letter-spacing:.5em;opacity:1}
 </style>
 </head>
 <body>
@@ -76,27 +81,26 @@ section::before{content:"";display:block;height:36px;margin:0 auto 12px;backgrou
 <div class="band" aria-hidden="true"></div>
 <main>
   <div class="arch">
-  <h1 id="title" aria-label="Tug’ilgan kun muborak">TUG’ILGAN KUN MUBORAK</h1>
+  <h1 id="title">Tug’ilgan<br>Kun<br>Muborak</h1>
   <p class="name" id="who">Zilolakhon!</p>
   </div>
   <div class="row">
     <button id="boom">Konfetti portlashi</button>
-    <button class="b" id="party">Bayram rejimi</button>
   </div>
 
-  <p class="msg"><b>💌</b>Qaniydi, hozir yoningda bo’lsam. Lekin kelgusidagi barcha tug’ilgan kunlaringda yoningda bo’lishga umid qilaman.</p>
+  <p class="msg"><b>✦</b>Qaniydi, hozir yoningda bo’lsam. Lekin kelgusidagi barcha tug’ilgan kunlaringda yoningda bo’lishga umid qilaman.</p>
 
   <section>
     <h2>Shamlarni o’chir</h2>
     <p class="hint">Har bir alangani bos. Avval tilak tila.</p>
     <div id="cake"><svg viewBox="0 0 320 300" role="group" aria-label="Tug’ilgan kun torti, 29 raqamli shamlar bilan">
 <ellipse class="o" cx="160" cy="278" rx="150" ry="14" style="fill:var(--card)"/>
-<rect class="o" x="40" y="205" width="240" height="70" rx="16" fill="#A4133C"/>
-<g fill="#E0A82E"><path d="M66 243l9 10-9 10-9-10z"/><path d="M102 243l9 10-9 10-9-10z"/><path d="M138 243l9 10-9 10-9-10z"/><path d="M174 243l9 10-9 10-9-10z"/><path d="M210 243l9 10-9 10-9-10z"/><path d="M246 243l9 10-9 10-9-10z"/></g>
-<rect class="o" x="40" y="205" width="240" height="30" rx="14" fill="#fff"/>
-<g fill="#fff"><circle cx="75" cy="238" r="10"/><circle cx="135" cy="242" r="12"/><circle cx="195" cy="238" r="10"/><circle cx="250" cy="241" r="11"/></g>
-<text class="o" x="100" y="216" text-anchor="middle" font-weight="700" font-size="150" font-family="'Sadira Craft','Amiri',Georgia,serif" fill="#1F3A93" style="paint-order:stroke;stroke-width:8">2</text>
-<text class="o" x="220" y="216" text-anchor="middle" font-weight="700" font-size="150" font-family="'Sadira Craft','Amiri',Georgia,serif" fill="#0E8C9A" style="paint-order:stroke;stroke-width:8">9</text>
+<rect class="o" x="40" y="205" width="240" height="70" rx="16" fill="#6B1A33"/>
+<g fill="#C9A24B"><path d="M66 243l9 10-9 10-9-10z"/><path d="M102 243l9 10-9 10-9-10z"/><path d="M138 243l9 10-9 10-9-10z"/><path d="M174 243l9 10-9 10-9-10z"/><path d="M210 243l9 10-9 10-9-10z"/><path d="M246 243l9 10-9 10-9-10z"/></g>
+<rect class="o" x="40" y="205" width="240" height="30" rx="14" fill="#FBF5E6"/>
+<g fill="#FBF5E6"><circle cx="75" cy="238" r="10"/><circle cx="135" cy="242" r="12"/><circle cx="195" cy="238" r="10"/><circle cx="250" cy="241" r="11"/></g>
+<text class="o" x="100" y="216" text-anchor="middle" font-weight="700" font-size="150" font-family="'Sadira Craft','Amiri',Georgia,serif" fill="#C9A24B" style="paint-order:stroke;stroke-width:8">2</text>
+<text class="o" x="220" y="216" text-anchor="middle" font-weight="700" font-size="150" font-family="'Sadira Craft','Amiri',Georgia,serif" fill="#C9A24B" style="paint-order:stroke;stroke-width:8">9</text>
 <g class="fl" transform="translate(82,98)" tabindex="0" role="button"><circle class="hit" r="24" cy="-8" fill="transparent"/><path class="o" style="stroke-width:2.5" d="M0 -24C11 -9 11 3 0 7C-11 3 -11 -9 0 -24Z" fill="#FFD60A"/><path d="M0 -10C5 -3 5 2 0 5C-5 2 -5 -3 0 -10Z" fill="#FF8A00"/><circle class="sm" r="7" cy="-8" fill="#9aa"/></g>
 <g class="fl" transform="translate(118,98)" tabindex="0" role="button"><circle class="hit" r="24" cy="-8" fill="transparent"/><path class="o" style="stroke-width:2.5" d="M0 -24C11 -9 11 3 0 7C-11 3 -11 -9 0 -24Z" fill="#FFD60A"/><path d="M0 -10C5 -3 5 2 0 5C-5 2 -5 -3 0 -10Z" fill="#FF8A00"/><circle class="sm" r="7" cy="-8" fill="#9aa"/></g>
 <g class="fl" transform="translate(202,98)" tabindex="0" role="button"><circle class="hit" r="24" cy="-8" fill="transparent"/><path class="o" style="stroke-width:2.5" d="M0 -24C11 -9 11 3 0 7C-11 3 -11 -9 0 -24Z" fill="#FFD60A"/><path d="M0 -10C5 -3 5 2 0 5C-5 2 -5 -3 0 -10Z" fill="#FF8A00"/><circle class="sm" r="7" cy="-8" fill="#9aa"/></g>
@@ -112,13 +116,7 @@ section::before{content:"";display:block;height:36px;margin:0 auto 12px;backgrou
     <div id="wish" aria-live="polite">Tilagingni o’qish uchun sharni yor.</div>
   </section>
 
-  <section>
-    <h2>Yana bir narsa</h2>
-    <p class="hint">Juda jiddiy tugma.</p>
-    <div class="row" style="height:70px"><button class="p" id="run">Bosma!</button></div>
-  </section>
-
-  <p class="foot">Juda ko’p konfetti bilan tayyorlandi. 🎉</p>
+  <p class="foot">✦ ✦ ✦</p>
 </main>
 <div class="band" aria-hidden="true"></div>
 <script>
@@ -126,7 +124,7 @@ section::before{content:"";display:block;height:36px;margin:0 auto 12px;backgrou
 var $=function(i){return document.getElementById(i)};
 var cv=$('c'),cx=cv.getContext('2d'),W,H,parts=[];
 function size(){W=cv.width=innerWidth;H=cv.height=innerHeight}size();addEventListener('resize',size);
-var cols=['#A4133C','#0E8C9A','#E0A82E','#1F3A93','#2FA89A','#D1495B'];
+var cols=['#6B1A33','#14275C','#C9A24B','#E9D8A6','#8E2A4A','#B8903A'];
 function burst(x,y,n){n=n||120;for(var i=0;i<n;i++){var a=Math.random()*Math.PI*2,s=4+Math.random()*10;
 parts.push({x:x,y:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-6,r:Math.random()*6+3,c:cols[i%cols.length],rot:Math.random()*6,vr:Math.random()*.4-.2,l:140+Math.random()*60})}
 if(!run)loop()}
@@ -139,17 +137,13 @@ if(parts.length)requestAnimationFrame(loop);else{run=false;cx.clearRect(0,0,W,H)
 function rain(){var t=0,iv=setInterval(function(){burst(Math.random()*W,-10,0);for(var i=0;i<14;i++)parts.push({x:Math.random()*W,y:-10,vx:Math.random()*4-2,vy:Math.random()*3,r:Math.random()*5+3,c:cols[i%6],rot:0,vr:.1,l:260});if(!run)loop();if(++t>20)clearInterval(iv)},120)}
 function center(){burst(W/2,H/3,160)}
 
-// letters
-var t=$('title');t.innerHTML='';
-var brk=false;'TUG’ILGAN KUN MUBORAK'.split('').forEach(function(ch,i){var s=document.createElement('span');if(ch===' '){t.appendChild(document.createElement('br'));return}else s.textContent=ch;s.style.animationDelay=(i*.08)+'s';s.setAttribute('aria-hidden','true');
-s.onclick=function(e){burst(e.clientX,e.clientY,40)};t.appendChild(s)});
+$('title').onclick=function(e){burst(e.clientX,e.clientY,60)};
 
 // name
 function setName(v){v=(v||'').trim();$('who').textContent=v?v+'!':'Sen ajoyibsan!';document.title=v?'Tug’ilgan kun muborak, '+v+'!':'Tug’ilgan kun muborak!'}
 var q=new URLSearchParams(location.search).get('name');if(q)setName(q);
 
 $('boom').onclick=center;
-$('party').onclick=function(){document.body.classList.toggle('party');rain()};
 
 // candles
 var left=4,fls=document.querySelectorAll('.fl');
@@ -168,11 +162,7 @@ for(var k=0;k<5;k++)setTimeout(balloon,k*400);
 setInterval(function(){if(sky.children.length<9&&!document.hidden)balloon()},1100);
 
 // runaway button
-var rb=$('run'),dodges=0,msgs=['Yo’q, juda sekin!','Sal qoldi!','Sen uchun juda tez!','Xo’p, xo’p, oxirgi urinish...'];
-function dodge(){if(dodges>=4)return;rb.textContent=msgs[dodges];dodges++;
-var x=(Math.random()-.5)*Math.min(innerWidth-160,420),y=(Math.random()-.5)*120;rb.style.transform='translate('+x+'px,'+y+'px) rotate('+(Math.random()*20-10)+'deg)'}
-rb.addEventListener('mouseenter',dodge);rb.addEventListener('touchstart',function(e){if(dodges<4){e.preventDefault();dodge()}},{passive:false});
-rb.onclick=function(){if(dodges<4){dodge();return}rb.style.transform='none';rb.textContent='Bosding! Bayram boshlandi!';document.body.classList.add('party');rain();center()};
+
 
 if(!q)setName('Zilolakhon');
 setTimeout(center,500);
