@@ -60,6 +60,8 @@ h2{font-family:'Bagel Fat One',Impact,sans-serif;font-weight:400;font-size:clamp
 .fl.off path{display:none}.fl.off .sm{opacity:.7}
 .fl:focus-visible circle.hit{stroke:var(--blue);stroke-width:3}
 @media (prefers-reduced-motion:reduce){.fl path{animation:none}}
+.song{margin-top:48px}
+#play{font-size:clamp(18px,5vw,24px);padding:16px 28px;background:var(--pink);color:#fff}
 </style>
 </head>
 <body>
@@ -104,6 +106,13 @@ h2{font-family:'Bagel Fat One',Impact,sans-serif;font-weight:400;font-size:clamp
     <h2>Yana bir narsa</h2>
     <p class="hint">Juda jiddiy tugma.</p>
     <div class="row" style="height:70px"><button class="p" id="run">Bosma!</button></div>
+  </section>
+
+  <section class="song">
+    <h2>Sen uchun qo’shiq 🎵</h2>
+    <p class="hint">Tugmani bos va tingla.</p>
+    <button id="play">▶ Qo’shiqni tinglash</button>
+    <audio id="song" preload="none" src="/_blob/dd2feefea2a42f83f777e63ad29f2c15"></audio>
   </section>
 
   <p class="foot">Juda ko’p konfetti bilan tayyorlandi. 🎉</p>
@@ -161,6 +170,11 @@ var x=(Math.random()-.5)*Math.min(innerWidth-160,420),y=(Math.random()-.5)*120;r
 rb.addEventListener('mouseenter',dodge);rb.addEventListener('touchstart',function(e){if(dodges<4){e.preventDefault();dodge()}},{passive:false});
 rb.onclick=function(){if(dodges<4){dodge();return}rb.style.transform='none';rb.textContent='Bosding! Bayram boshlandi!';document.body.classList.add('party');rain();center()};
 
+var au=$('song'),pb=$('play');
+function lab(p){pb.textContent=p?'⏸ To’xtatish':'▶ Qo’shiqni tinglash'}
+pb.onclick=function(){if(au.paused){var r=au.play();if(r&&r.catch)r.catch(function(){pb.textContent='Qo’shiq yuklanmadi'});burst(innerWidth/2,innerHeight/2,70)}else au.pause()};
+au.onplay=function(){lab(true)};au.onpause=function(){lab(false)};au.onended=function(){lab(false)};
+au.onerror=function(){pb.textContent='Qo’shiq yuklanmadi'};
 if(!q)setName('Zilolakhon');
 setTimeout(center,500);
 })();
