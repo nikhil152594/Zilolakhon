@@ -37,7 +37,8 @@ h2{font-family:'DM Serif Display',Georgia,serif;font-weight:400;color:var(--ink)
 #wish{min-height:92px;margin-top:16px;padding:16px;font-size:19px;display:flex;align-items:center;justify-content:center;color:var(--ink)}
 #cake{display:block;width:min(92vw,380px);margin:0 auto;font-size:0}
 #cake svg{width:100%;height:auto;display:block;overflow:visible}
-#cake text{filter:drop-shadow(0 4px 0 rgba(214,51,108,.28))}
+#cake .bn{animation:bob 4.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center;filter:drop-shadow(0 8px 10px rgba(240,80,138,.35))}#cake .bn.r{animation-delay:-2.1s}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-8px) rotate(3deg)}}
 .tw{animation:tw 2.2s infinite;transform-box:fill-box;transform-origin:center}
 .fl{cursor:pointer;outline:none}
 .fl path{transform-box:fill-box;transform-origin:50% 100%;animation:fk .35s ease-in-out infinite alternate}
@@ -92,7 +93,10 @@ h2{font-family:'DM Serif Display',Georgia,serif;font-weight:400;color:var(--ink)
 #card{position:relative;width:min(80vw,340px);aspect-ratio:1;margin:14px 0;border-radius:26px;overflow:hidden;outline:6px solid #fff;box-shadow:0 0 0 6px #FFB3CB,0 18px 44px rgba(214,51,108,.35)}
 #photo{position:absolute;inset:0;background-size:cover;background-position:center}
 #foil{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;transition:opacity 1s}
-@media (prefers-reduced-motion:reduce){#fl span,.fl path,.tw,.arch:after{animation:none}.bal{animation-duration:12s!important}}
+@media (prefers-reduced-motion:reduce){#cake .bn,#fl span,.fl path,.tw,.arch:after{animation:none}.bal{animation-duration:12s!important}}
+.bln{animation:bob 4s ease-in-out infinite;transform-box:fill-box}
+@keyframes bob{50%{transform:translateY(-9px)}}
+@media (prefers-reduced-motion:reduce){.bln{animation:none}}
 </style>
 </head>
 <body class="locked">
@@ -133,18 +137,36 @@ h2{font-family:'DM Serif Display',Georgia,serif;font-weight:400;color:var(--ink)
   <section>
     <h2>Shamlarni o’chir</h2>
     <p class="hint">Har bir alangani bos. Avval tilak tila.</p>
-    <div id="cake"><svg viewBox="0 0 320 300" role="group" aria-label="Tug’ilgan kun torti, 29 raqamli shamlar bilan">
-<defs><linearGradient id="cgr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF9DBB"/><stop offset="1" stop-color="#F0508A"/></linearGradient></defs>
-<ellipse cx="160" cy="286" rx="140" ry="11" fill="#E8457E" opacity=".18"/><ellipse cx="160" cy="277" rx="150" ry="14" fill="#fff"/>
-<rect x="40" y="205" width="240" height="72" rx="24" fill="url(#cgr)"/>
-<g fill="#FFF0F5"><path transform="translate(72 257) scale(1.15)" d="M0 7C-12 -1 -10 -10 -4.5 -10C-1.8 -10 0 -8 0 -6.5C0 -8 1.8 -10 4.5 -10C10 -10 12 -1 0 7Z"/><path transform="translate(116 257) scale(1.15)" d="M0 7C-12 -1 -10 -10 -4.5 -10C-1.8 -10 0 -8 0 -6.5C0 -8 1.8 -10 4.5 -10C10 -10 12 -1 0 7Z"/><path transform="translate(160 257) scale(1.15)" d="M0 7C-12 -1 -10 -10 -4.5 -10C-1.8 -10 0 -8 0 -6.5C0 -8 1.8 -10 4.5 -10C10 -10 12 -1 0 7Z"/><path transform="translate(204 257) scale(1.15)" d="M0 7C-12 -1 -10 -10 -4.5 -10C-1.8 -10 0 -8 0 -6.5C0 -8 1.8 -10 4.5 -10C10 -10 12 -1 0 7Z"/><path transform="translate(248 257) scale(1.15)" d="M0 7C-12 -1 -10 -10 -4.5 -10C-1.8 -10 0 -8 0 -6.5C0 -8 1.8 -10 4.5 -10C10 -10 12 -1 0 7Z"/></g>
-<rect x="40" y="203" width="240" height="32" rx="16" fill="#FFF8F2"/>
-<g fill="#FFF8F2"><circle cx="75" cy="236" r="11"/><circle cx="135" cy="240" r="13"/><circle cx="195" cy="236" r="11"/><circle cx="250" cy="239" r="12"/></g>
-<g><rect x="66" y="214" width="9" height="4" rx="2" fill="#FF8FB1" transform="rotate(25 70 216)"/><rect x="118" y="212" width="9" height="4" rx="2" fill="#9AD0FF" transform="rotate(-20 122 214)"/><rect x="170" y="215" width="9" height="4" rx="2" fill="#FFC15E" transform="rotate(30 174 217)"/><rect x="226" y="213" width="9" height="4" rx="2" fill="#C9B6FF" transform="rotate(-25 230 215)"/></g>
-<text x="100" y="216" text-anchor="middle" font-size="150" font-weight="600" font-family="'Fredoka','DM Serif Display',sans-serif" fill="#8EC8FF" stroke="#fff" stroke-width="10" stroke-linejoin="round" paint-order="stroke">2</text>
-<text x="220" y="216" text-anchor="middle" font-size="150" font-weight="600" font-family="'Fredoka','DM Serif Display',sans-serif" fill="#FFB1CC" stroke="#fff" stroke-width="10" stroke-linejoin="round" paint-order="stroke">9</text>
-<path class="tw" style="animation-delay:0s" transform="translate(30 128) scale(0.9)" d="M0 -9L2.2 -2.2L9 0L2.2 2.2L0 9L-2.2 2.2L-9 0L-2.2 -2.2Z" fill="#FFC15E"/><path class="tw" style="animation-delay:0.7s" transform="translate(290 120) scale(1.1)" d="M0 -9L2.2 -2.2L9 0L2.2 2.2L0 9L-2.2 2.2L-9 0L-2.2 -2.2Z" fill="#C9B6FF"/><path class="tw" style="animation-delay:1.2s" transform="translate(160 60) scale(0.8)" d="M0 -9L2.2 -2.2L9 0L2.2 2.2L0 9L-2.2 2.2L-9 0L-2.2 -2.2Z" fill="#FF8FB1"/><path class="tw" style="animation-delay:0.4s" transform="translate(48 60) scale(0.6)" d="M0 -9L2.2 -2.2L9 0L2.2 2.2L0 9L-2.2 2.2L-9 0L-2.2 -2.2Z" fill="#9AD0FF"/><path class="tw" style="animation-delay:1.6s" transform="translate(272 64) scale(0.7)" d="M0 -9L2.2 -2.2L9 0L2.2 2.2L0 9L-2.2 2.2L-9 0L-2.2 -2.2Z" fill="#FFC15E"/>
-<g class="fl" transform="translate(82,98)" tabindex="0" role="button"><circle class="hit" r="24" cy="-8" fill="transparent"/><path d="M0 -24C11 -9 11 3 0 7C-11 3 -11 -9 0 -24Z" fill="#FFC83D"/><path d="M0 -10C5 -3 5 2 0 5C-5 2 -5 -3 0 -10Z" fill="#FF8A3D"/><circle class="sm" r="7" cy="-8" fill="#B9A9C9"/></g><g class="fl" transform="translate(118,98)" tabindex="0" role="button"><circle class="hit" r="24" cy="-8" fill="transparent"/><path d="M0 -24C11 -9 11 3 0 7C-11 3 -11 -9 0 -24Z" fill="#FFC83D"/><path d="M0 -10C5 -3 5 2 0 5C-5 2 -5 -3 0 -10Z" fill="#FF8A3D"/><circle class="sm" r="7" cy="-8" fill="#B9A9C9"/></g><g class="fl" transform="translate(202,98)" tabindex="0" role="button"><circle class="hit" r="24" cy="-8" fill="transparent"/><path d="M0 -24C11 -9 11 3 0 7C-11 3 -11 -9 0 -24Z" fill="#FFC83D"/><path d="M0 -10C5 -3 5 2 0 5C-5 2 -5 -3 0 -10Z" fill="#FF8A3D"/><circle class="sm" r="7" cy="-8" fill="#B9A9C9"/></g><g class="fl" transform="translate(238,98)" tabindex="0" role="button"><circle class="hit" r="24" cy="-8" fill="transparent"/><path d="M0 -24C11 -9 11 3 0 7C-11 3 -11 -9 0 -24Z" fill="#FFC83D"/><path d="M0 -10C5 -3 5 2 0 5C-5 2 -5 -3 0 -10Z" fill="#FF8A3D"/><circle class="sm" r="7" cy="-8" fill="#B9A9C9"/></g>
+    <div id="cake"><svg viewBox="0 0 360 400" role="group" aria-label="Tug’ilgan kun torti, shamlar va 29 raqamli sharlar bilan">
+<defs>
+<linearGradient id="gb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCCBF8"/><stop offset="1" stop-color="#B79DE6"/></linearGradient>
+<linearGradient id="gt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFC3D6"/><stop offset="1" stop-color="#FF9DBB"/></linearGradient>
+<linearGradient id="sh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".12"/><stop offset=".3" stop-color="#fff" stop-opacity=".16"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".16"/></linearGradient>
+<linearGradient id="gs" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E9E1EE"/><stop offset=".5" stop-color="#fff"/><stop offset="1" stop-color="#E1D8E8"/></linearGradient>
+<linearGradient id="fo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFC9D8"/><stop offset=".4" stop-color="#F59DB8"/><stop offset=".7" stop-color="#FFDCE7"/><stop offset="1" stop-color="#EE8FB0"/></linearGradient>
+<pattern id="stp" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="9" height="4" fill="#fff" opacity=".6"/></pattern>
+</defs>
+<g class="bln" style="animation-delay:0s"><text x="52" y="172" text-anchor="middle" font-size="150" font-weight="600" font-family="'Fredoka',sans-serif" fill="url(#fo)" stroke="#FFEDF3" stroke-width="6" stroke-linejoin="round" paint-order="stroke">2</text></g><g class="bln" style="animation-delay:1.2s"><text x="308" y="172" text-anchor="middle" font-size="150" font-weight="600" font-family="'Fredoka',sans-serif" fill="url(#fo)" stroke="#FFEDF3" stroke-width="6" stroke-linejoin="round" paint-order="stroke">9</text></g>
+<ellipse cx="180" cy="388" rx="70" ry="8" fill="#E8457E" opacity=".14"/>
+<ellipse cx="180" cy="378" rx="62" ry="10" fill="#fff"/>
+<path d="M150 336Q170 352 160 374H200Q190 352 210 336Z" fill="url(#gs)"/>
+<ellipse cx="180" cy="327" rx="152" ry="28" fill="#E7DDEC"/><ellipse cx="180" cy="319" rx="152" ry="28" fill="#fff"/><ellipse cx="180" cy="319" rx="132" ry="22" fill="#F7F1FA"/>
+<path d="M52 252V316A128 26 0 0 0 308 316V252Z" fill="url(#gb)"/><g id="sideB"></g><g id="beads"></g>
+<path d="M52 252V316A128 26 0 0 0 308 316V252Z" fill="url(#sh)"/>
+<ellipse cx="180" cy="252" rx="128" ry="26" fill="#E6D9FB"/>
+<g id="ledgeBack"></g>
+<path d="M88 196V252A92 19 0 0 0 272 252V196Z" fill="url(#gt)"/><g id="sideT"></g>
+<path d="M88 196V252A92 19 0 0 0 272 252V196Z" fill="url(#sh)"/>
+<path d="M88 196V209A92 19 0 0 0 272 209V196Z" fill="#FFFDFB"/><g id="drips"></g>
+<g id="ledgeFront"></g>
+<ellipse cx="180" cy="196" rx="92" ry="19" fill="#FFE6EE"/><ellipse cx="180" cy="196" rx="80" ry="15" fill="none" stroke="#fff" stroke-width="2" opacity=".7"/>
+<g id="sprT"></g><g id="topBack"></g>
+<path transform="translate(180 200) scale(2.1)" d="M0 7C-12 -1 -10 -10 -4.5 -10C-1.8 -10 0 -8 0 -6.5C0 -8 1.8 -10 4.5 -10C10 -10 12 -1 0 7Z" fill="#E8363F"/><path d="M174 190q3-4 7-2" stroke="#fff" stroke-width="2" fill="none" opacity=".7" stroke-linecap="round"/>
+<g id="candleBodies"></g>
+<g id="flames"><g class="fl" transform="translate(180,130)" tabindex="0" role="button"><circle class="hit" r="24" cy="-8" fill="transparent"/><path d="M0 -24C11 -9 11 3 0 7C-11 3 -11 -9 0 -24Z" fill="#FFC83D"/><path d="M0 -10C5 -3 5 2 0 5C-5 2 -5 -3 0 -10Z" fill="#FF8A3D"/><circle class="sm" r="7" cy="-8" fill="#B9A9C9"/></g><g class="fl" transform="translate(180,130)" tabindex="0" role="button"><circle class="hit" r="24" cy="-8" fill="transparent"/><path d="M0 -24C11 -9 11 3 0 7C-11 3 -11 -9 0 -24Z" fill="#FFC83D"/><path d="M0 -10C5 -3 5 2 0 5C-5 2 -5 -3 0 -10Z" fill="#FF8A3D"/><circle class="sm" r="7" cy="-8" fill="#B9A9C9"/></g><g class="fl" transform="translate(180,130)" tabindex="0" role="button"><circle class="hit" r="24" cy="-8" fill="transparent"/><path d="M0 -24C11 -9 11 3 0 7C-11 3 -11 -9 0 -24Z" fill="#FFC83D"/><path d="M0 -10C5 -3 5 2 0 5C-5 2 -5 -3 0 -10Z" fill="#FF8A3D"/><circle class="sm" r="7" cy="-8" fill="#B9A9C9"/></g><g class="fl" transform="translate(180,130)" tabindex="0" role="button"><circle class="hit" r="24" cy="-8" fill="transparent"/><path d="M0 -24C11 -9 11 3 0 7C-11 3 -11 -9 0 -24Z" fill="#FFC83D"/><path d="M0 -10C5 -3 5 2 0 5C-5 2 -5 -3 0 -10Z" fill="#FF8A3D"/><circle class="sm" r="7" cy="-8" fill="#B9A9C9"/></g></g>
+<g id="topFront"></g>
+<g><rect x="10" y="360" width="64" height="38" rx="6" fill="#C9B6FF"/><rect x="36" y="360" width="12" height="38" fill="#A8E6CF"/><rect x="16" y="332" width="52" height="30" rx="5" fill="#FFB3CB"/><rect x="36" y="332" width="12" height="30" fill="#FFD76A"/><rect x="24" y="310" width="36" height="24" rx="4" fill="#FFD76A"/><rect x="36" y="310" width="10" height="24" fill="#FF4D5E"/><ellipse cx="32" cy="306" rx="9" ry="6" fill="#FF4D5E" transform="rotate(-20 32 306)"/><ellipse cx="50" cy="306" rx="9" ry="6" fill="#FF4D5E" transform="rotate(20 50 306)"/><circle cx="41" cy="309" r="4" fill="#E02F44"/></g><g><rect x="310" y="342" width="22" height="14" rx="3" fill="#D9A66B"/><rect x="296" y="352" width="50" height="44" rx="17" fill="#FFF1F6" opacity=".85" stroke="#fff" stroke-width="2"/><path d="M296 360Q321 372 346 360" fill="none" stroke="#C9B6FF" stroke-width="5"/><g fill="#FFC15E"><circle cx="310" cy="384" r="5"/><circle cx="324" cy="379" r="5"/><circle cx="335" cy="388" r="5"/><circle cx="318" cy="391" r="4"/></g></g>
+<path class="tw" style="animation-delay:0s" transform="translate(24 230) scale(0.9)" d="M0 -9L2.2 -2.2L9 0L2.2 2.2L0 9L-2.2 2.2L-9 0L-2.2 -2.2Z" fill="#FFC15E"/><path class="tw" style="animation-delay:0.7s" transform="translate(336 222) scale(1)" d="M0 -9L2.2 -2.2L9 0L2.2 2.2L0 9L-2.2 2.2L-9 0L-2.2 -2.2Z" fill="#C9B6FF"/><path class="tw" style="animation-delay:1.2s" transform="translate(180 92) scale(0.8)" d="M0 -9L2.2 -2.2L9 0L2.2 2.2L0 9L-2.2 2.2L-9 0L-2.2 -2.2Z" fill="#FF8FB1"/><path class="tw" style="animation-delay:0.4s" transform="translate(120 110) scale(0.6)" d="M0 -9L2.2 -2.2L9 0L2.2 2.2L0 9L-2.2 2.2L-9 0L-2.2 -2.2Z" fill="#9AD0FF"/><path class="tw" style="animation-delay:1.6s" transform="translate(246 106) scale(0.7)" d="M0 -9L2.2 -2.2L9 0L2.2 2.2L0 9L-2.2 2.2L-9 0L-2.2 -2.2Z" fill="#FFC15E"/><path class="tw" style="animation-delay:0.9s" transform="translate(20 300) scale(0.6)" d="M0 -9L2.2 -2.2L9 0L2.2 2.2L0 9L-2.2 2.2L-9 0L-2.2 -2.2Z" fill="#FF8FB1"/><path class="tw" style="animation-delay:0.3s" transform="translate(340 310) scale(0.7)" d="M0 -9L2.2 -2.2L9 0L2.2 2.2L0 9L-2.2 2.2L-9 0L-2.2 -2.2Z" fill="#FFC15E"/>
 </svg></div>
     
   </section>
@@ -239,6 +261,37 @@ function build(src){
   (function(t){t.addEventListener('pointerdown',function(e){drag(t,e)});t.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tapSel(arr.indexOf(+t.dataset.id))}}})(t);
   board.insertBefore(t,full);tiles.push(t)}
  full.style.backgroundImage='url("'+src+'")';shuffle()}
+// cake rotation
+var CX=180,NS='http://www.w3.org/2000/svg';
+function mkg(html,par){var g=document.createElementNS(NS,'g');g.innerHTML=html;$(par).appendChild(g);return g}
+function macaron(c){return '<ellipse cy="-2.5" rx="12" ry="5.5" fill="'+c+'"/><ellipse cy="-6" rx="11" ry="3.2" fill="#FFF7EA"/><ellipse cy="-9" rx="12" ry="6.5" fill="'+c+'"/><ellipse cx="-4" cy="-11" rx="4" ry="1.8" fill="#fff" opacity=".5"/>'}
+var MER='<path d="M-10 3Q-11 -3 -6 -5Q-8 -9 -4 -11Q-5 -16 0 -21Q5 -16 4 -11Q8 -9 6 -5Q11 -3 10 3Z" fill="#FFFDFB" stroke="#F0DDE6" stroke-width="1"/><path d="M-7 -4Q0 -1 7 -4M-5 -9Q0 -6 5 -9" fill="none" stroke="#F0DDE6" stroke-width="1"/>';
+var LC=['#9FDCC0','#FFE08A','#FFB5A3','#FFADC4','#C9B6FF'],SC=['#FF8FB1','#9AD0FF','#FFC15E','#C9B6FF','#7FD8B5','#fff'];
+function ring(n,count,r,cy,f,bk,fr){var o=[];for(var i=0;i<count;i++){var k=i%2,c=LC[(i>>1)%5],h=k?MER:macaron(c);o.push({a:i*360/count,r:r,cy:cy,f:f,b:mkg(h,bk),t:mkg(h,fr)})}return o}
+var ledge=ring(0,10,108,252,26/128,'ledgeBack','ledgeFront'),rim=ring(0,7,70,196,19/92,'topBack','topFront');
+var cdl=[],ci;for(ci=0;ci<4;ci++)cdl.push({a:ci*90+45,g:mkg('<rect x="-4.5" y="-48" width="9" height="48" rx="3" fill="'+LC[ci]+'"/><rect x="-4.5" y="-48" width="9" height="48" rx="3" fill="url(#stp)"/>','candleBodies')});
+var flm=document.querySelectorAll('#flames .fl');
+function dots(n,par,mk){var o=[];for(var i=0;i<n;i++){var e=mk(i);$(par).appendChild(e);o.push({e:e,a:Math.random()*360,r:Math.random(),h:Math.random(),rot:Math.random()*180})}return o}
+function rc(i){var e=document.createElementNS(NS,'rect');e.setAttribute('width',4.4);e.setAttribute('height',1.9);e.setAttribute('rx',.9);e.setAttribute('x',-2.2);e.setAttribute('y',-1);e.setAttribute('fill',SC[i%6]);return e}
+function cc(i){var e=document.createElementNS(NS,'ellipse');e.setAttribute('rx',2.3);e.setAttribute('ry',1.6);e.setAttribute('fill',SC[i%6]);return e}
+var spT=dots(30,'sprT',cc),sdT=dots(24,'sideT',rc),sdB=dots(44,'sideB',rc);
+var beads=[],bi;for(bi=0;bi<30;bi++){var bg=mkg('<circle r="6.5" fill="#B79DE6"/><circle cx="-2" cy="-2" r="2.2" fill="#fff" opacity=".55"/>','beads');beads.push({a:bi*12,g:bg})}
+var drp=[],di;for(di=0;di<13;di++){var dr=document.createElementNS(NS,'rect');dr.setAttribute('fill','#FFFDFB');$('drips').appendChild(dr);drp.push({a:di*27.7,l:14+Math.random()*22,e:dr})}
+var RAD=Math.PI/180,ang=0,lastT=0,reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+function TR(e,x,y,s,sx){e.setAttribute('transform','translate('+x.toFixed(1)+' '+y.toFixed(1)+')'+(s?' scale('+s.toFixed(2)+(sx?' '+sx.toFixed(2):'')+')':''))}
+function disp(e,on){var v=on?'':'none';if(e.style.display!==v)e.style.display=v}
+function upd(a){var i,o,t,s,c,x,y,sc;
+ for(i=0;i<ledge.length;i++){o=ledge[i];t=o.a*RAD+a;s=Math.sin(t);c=Math.cos(t);x=CX+o.r*c;y=o.cy+o.r*o.f*s;sc=.88+.2*s;TR(o.b,x,y,sc);TR(o.t,x,y,sc);disp(o.b,s<0);disp(o.t,s>=0)}
+ for(i=0;i<rim.length;i++){o=rim[i];t=o.a*RAD+a;s=Math.sin(t);c=Math.cos(t);x=CX+o.r*c;y=o.cy+o.r*o.f*s;sc=.88+.2*s;TR(o.b,x,y,sc);TR(o.t,x,y,sc);disp(o.b,s<0);disp(o.t,s>=0)}
+ for(i=0;i<cdl.length;i++){o=cdl[i];t=o.a*RAD+a;s=Math.sin(t);x=CX+46*Math.cos(t);y=200+9.5*s;TR(o.g,x,y,1);TR(flm[i],x,y-50,1)}
+ for(i=0;i<spT.length;i++){o=spT[i];t=o.a*RAD+a;s=Math.sin(t);var r=14+o.r*64;TR(o.e,CX+r*Math.cos(t),196+r*.2065*s,1)}
+ for(i=0;i<sdT.length;i++){o=sdT[i];t=o.a*RAD+a;s=Math.sin(t);disp(o.e,s>.12);x=CX+92*Math.cos(t);y=209+19*s+6+o.h*30;o.e.setAttribute('transform','translate('+x.toFixed(1)+' '+y.toFixed(1)+') rotate('+o.rot.toFixed(0)+') scale('+(.4+.6*s).toFixed(2)+' 1)')}
+ for(i=0;i<sdB.length;i++){o=sdB[i];t=o.a*RAD+a;s=Math.sin(t);disp(o.e,s>.12);x=CX+128*Math.cos(t);y=252+26*s+8+o.h*50;o.e.setAttribute('transform','translate('+x.toFixed(1)+' '+y.toFixed(1)+') rotate('+o.rot.toFixed(0)+') scale('+(.4+.6*s).toFixed(2)+' 1)')}
+ for(i=0;i<beads.length;i++){o=beads[i];t=o.a*RAD+a;s=Math.sin(t);disp(o.g,s>.05);TR(o.g,CX+128*Math.cos(t),313+26*s,.8+.3*s)}
+ for(i=0;i<drp.length;i++){o=drp[i];t=o.a*RAD+a;s=Math.sin(t);disp(o.e,s>.1);var w=11*(.35+.65*s);x=CX+92*Math.cos(t);o.e.setAttribute('x',(x-w/2).toFixed(1));o.e.setAttribute('y',(209+19*s-2).toFixed(1));o.e.setAttribute('width',w.toFixed(1));o.e.setAttribute('height',(o.l+2).toFixed(1));o.e.setAttribute('rx',(w/2).toFixed(1))}
+}
+function frame(tm){var dt=Math.min(.05,(tm-lastT)/1000||0);lastT=tm;if(!reduce)ang+=dt*.42;upd(ang);requestAnimationFrame(frame)}
+upd(0);requestAnimationFrame(frame);
 // door
 var dr=$('door'),fr=$('frame'),kb=$('knock'),busy=false,ac=null;
 function thump(){try{var AC=window.AudioContext||window.webkitAudioContext;ac=ac||new AC();var o=ac.createOscillator(),g=ac.createGain(),t0=ac.currentTime;o.type='sine';o.frequency.setValueAtTime(150,t0);o.frequency.exponentialRampToValueAtTime(55,t0+.12);g.gain.setValueAtTime(.9,t0);g.gain.exponentialRampToValueAtTime(.001,t0+.2);o.connect(g);g.connect(ac.destination);o.start(t0);o.stop(t0+.22)}catch(e){}}
